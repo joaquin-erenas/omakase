@@ -1,0 +1,263 @@
+.menuSeccion {
+    background-color:#DFE0DA;
+    /*
+    background-image: url("../assets/media/background-texture.jpg");
+    background-repeat: repeat;*/
+}
+
+.tituloSeccion {
+    font-size:5vh;
+    font-weight: 800;
+    text-align: center;
+    color:#222;
+
+}
+
+#tituloMenu {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 3em;
+}
+.menuSeccion p {
+       
+    display: inline-block;
+}
+  
+#tituloMenu::before {
+    position: absolute;
+    top: calc(50%-90px);
+    right: 0;
+    left: 0;
+    Content: "";
+    Background-color: #7C796C;
+    height: 2px;
+    width: 20%;
+    margin: auto;
+
+    
+}
+
+.icon1 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    border: 2px solid #7C796C;
+    background: #222;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: auto;
+    color:white;
+}
+
+.tituloSeccionMenu {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#tiendaProductos {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#buscador {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+
+}
+.productos {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 50px;
+
+}
+
+#carrito {
+    position:fixed;
+    z-index: 3000;
+    right: 0;
+    top:90px;
+    height: 0%;
+    width: 0%;
+}
+
+@keyframes prueba {
+    from {
+        height: 100%;
+        width: 100%;
+    } to {
+        height: 0%;
+        width: 0%;
+    }
+}
+
+#cesta {
+    background-color: #111;
+    border-top: 1px solid #111;
+    color:white;
+    border-bottom-left-radius: 20px;
+    min-height: 100%;
+    min-width: 600px;
+    text-align: center;
+
+}
+
+#cesta h1,h3 {
+    margin: 10px;
+}
+
+#cesta hr {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#cesta .producto {
+    width: 100%;
+    height: 30px;
+    display: grid;
+    border-radius: 30px;
+    border:1px solid rgb(255, 255, 255);
+    max-width: 85%;
+    margin: auto;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(4,1fr);
+}
+
+#cesta .producto svg{
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#cesta .producto h4{
+    margin: auto;
+    min-width: 100%;
+}
+
+#footerCesta {
+    position:absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.agregarCesta {
+    position:relative;
+    top:10px;
+    right: -70px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+}
+
+.productos > div img{
+    border-radius: 20px;
+    max-width: auto;
+    background-image: url("../../assets/media/sushi1.jpg");
+    background-size: cover;
+    background-position: 50% 38%;
+    height: 200px;
+    width: 200px;
+    display: flex;
+
+}
+
+.productos > div svg {
+    position:relative;
+    top:50px;
+    left: 10px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.infoProducto {
+    position:relative;
+    height: 40px;
+    width: 100%;
+    margin: auto;
+    margin-left: 8px;
+}
+
+
+
+form h2,input {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+
+
+#botonCarrito {
+    position:fixed;
+    right: 40px;
+    top: 13px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: 0.4s;
+}
+
+#botonCarrito:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#botonCarrito div {
+    background-color: #c5142c;
+    position:absolute;
+    right: 0px;
+    top:30px;
+    width: 25px;
+    height: 25px;
+    z-index: 2001;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+
+}
+
+
+/*
+.grid-container > div img {
+    border-radius: 50%;
+    height: 80%;
+    margin: 20px;
+    width: 300px;
+
+}
+
+.cuboGrid1 {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.grid-container > div p,h1 {
+    margin: 20px;
+}*/

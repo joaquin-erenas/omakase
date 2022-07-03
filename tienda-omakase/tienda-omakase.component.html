@@ -1,0 +1,85 @@
+<script>
+  const btnCarro = document.getElementById("botonCarrito");
+  const carrito = document.getElementById("carrito");
+
+  btnCarro.addEventListener("click", () => {
+  carrito.classList.toggle("active");
+  })
+
+  document.querySelectorAll(".carrito").forEach(n => n.addEventListener("click", () => {
+  btnCarro.classList.remove("active");
+  carrito.classList.remove("active");
+  }))
+  
+  
+</script>
+
+<div id="carrito">
+  <div id="cesta">
+    <h1>Cesta</h1>
+    <hr>
+    <div class="producto" style="border:none;grid-template-columns: repeat(1,1fr);" *ngIf="productosCesta.length==0">
+      <h2>Sin productos en la cesta :(</h2>
+    </div>        
+    <div *ngIf="productosCesta.length>0">
+      <div class="producto" *ngFor="let producto of productosCesta">
+        <div>
+          <svg (click)="aumentarProducto(producto.getNombre)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><path d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>      
+          <svg (click)="disminuirProducto(producto.getNombre)" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><path d="M696 480H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
+        </div>
+        <h4>{{getDifProds(producto.getNombre)}}</h4>
+        <h4>{{producto.getNombre}}</h4>
+        <h4>{{producto.getPrecio}} €</h4>
+      </div>
+      <div id="footerCesta">
+        <h3>Total: {{getSumaTotal}} €</h3>
+        <input type="submit" value="Pagar">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="menuSeccion">
+  
+    <a id="inicio">
+      <div id="tituloMenu">
+        <svg stroke="currentColor"  class="icon1" fill="white" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M39.906 27.188c-9.118 13.907-11.366 30.99-7.843 50.718 4.2 23.526 16.91 50.038 35.28 75 36.742 49.925 96.05 93.082 148.813 99.625l3.688.47 2.375 2.844L416.374 490.22c19.352 4.624 31.847 1.745 38.344-4.69 6.547-6.484 9.566-19.005 4.717-38.874L39.908 27.187zM414.97 29.5L306.47 138c-12 11.998-12.104 25.2-5.908 39.625l2.563 5.97-4.688 4.5L262 222.844l29.594 29.593 34.594-36.532 4.5-4.75 5.968 2.594c15.165 6.535 29.546 6.267 40.688-4.875l108.5-108.5L471.75 86.28l-70.563 70.532L388 143.595l70.53-70.53L443.5 58.03l-70.53 70.532-13.22-13.218 70.53-70.53-15.31-15.314zM210.936 271.563L25.53 448.469c-4.575 18.95-1.644 30.787 4.532 36.905 6.178 6.118 18.128 8.927 36.844 4.406l173.22-182.967-29.19-35.25z"></path></svg>
+      </div>
+    </a>
+    <h1 class="tituloSeccion">Nuestra carta</h1>
+    <div id="botonCarrito">
+      <div>{{productosCesta.length}}</div>
+      <svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 24 24" height="2.5em" width="2.5em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path fill-rule="nonzero" d="M15.366 3.438L18.577 9H22v2h-1.167l-.757 9.083a1 1 0 0 1-.996.917H4.92a1 1 0 0 1-.996-.917L3.166 11H2V9h3.422l3.212-5.562 1.732 1L7.732 9h8.535l-2.633-4.562 1.732-1zM18.826 11H5.173l.667 8h12.319l.667-8zM13 13v4h-2v-4h2zm-4 0v4H7v-4h2zm8 0v4h-2v-4h2z"></path></g></svg>    
+    </div>
+    <!--Sección menú-->
+    <h1 class="tituloSeccionMenu">Bandejas</h1>
+    <div id="tiendaProductos">
+      <div class="productos">
+        <div *ngFor="let producto of productosMenu">
+            <svg (click)="agregarProducto(producto.getId,producto.getNombre,producto.getPrecio,producto.getRuta)" stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="2.3em" width="2.3em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11H7v2h4v4h2v-4h4v-2h-4V7h-2v4z"></path></g></svg>
+            <img src="{{producto.getRuta}}" alt="sushi">
+            <div class="infoProducto">
+                <h1>{{producto.getNombre}}</h1>
+                <h4>{{producto.getPrecio}} €</h4>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h1 class="tituloSeccionMenu">Entrantes</h1>
+    <div id="tiendaProductos">
+      <div class="productos">
+        <div *ngFor="let producto of productosEntrantes">
+            <svg (click)="agregarProducto(producto.getId,producto.getNombre,producto.getPrecio,producto.getRuta)" stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 24 24" height="2.3em" width="2.3em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11H7v2h4v4h2v-4h4v-2h-4V7h-2v4z"></path></g></svg>
+            <img src="{{producto.getRuta}}" alt="sushi">
+            <div class="infoProducto">
+                <h1>{{producto.getNombre}}</h1>
+                <h4>{{producto.getPrecio}} €</h4>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>

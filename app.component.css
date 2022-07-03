@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+@font-face {
+    font-family: personal;
+    src: url("../assets/media/takoyaki_3/TAKOYAKI.ttf");
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiDyp8kv8JHgFVrJJLm81xVFteOcEg.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+
+body {
+    background: #222;
+}
+
+#contenedor-flechas {
+    position: absolute;
+    left: 50%;
+    top: 92%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 60px;
+    height: 60px;
+}
+
+.arrow {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 2s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #C5142C;
+    content: '';
+    display: block;
+    height: 4px; 
+    position: absolute;
+    top: 44vh;
+    left: -20px;
+    width: 40px;
+}
+
+.arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+}
+
+
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+
+.imagenFondo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-image: url("../assets/media/sentidos-humanos-n63-Wr-dhGo-unsplash.jpg");
+    background-size: cover;
+    background-position: 50% 38%;
+    
+
+}
+
+.noFijo {
+    width: 100%;
+    height: 100px;  
+    z-index: 1000; 
+    position:absolute;
+    padding-top: 40px;
+    transition: 0.4s;
+}
+
+.fijo{
+    position:fixed;
+    background-color: #111;
+    padding-top: 0px;
+    width: 100%;
+    height: 90px;  
+    z-index: 1000; 
+    transition: 0.4s;
+
+}
+
+.container-header{
+    max-width: 86%;
+    height: 100%;
+    margin: auto;
+    padding: 40px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: none;
+}
+
+#logo {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#logo img {
+    height: 40px;
+    margin-top: 17px;
+    color:white;
+
+}
+#logo h1,a{
+    font-family: personal;
+    color:#fff;
+    text-decoration: none;
+    font-size: 40px;
+
+}
+
+.menu nav ul{
+    display: flex;
+}
+
+.menu nav ul li{
+    list-style: none;
+    padding: 0px 20px;
+}
+
+.menu nav ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    color:#fff;
+    transition: 0.4s;
+    font-family: 'Poppins';
+
+}
+
+.menu nav ul li a:hover{
+    background: #C5142C;
+    padding: 20px;
+    border-radius: 5px;
+
+    
+
+}
+
+svg {
+    margin: 10px;
+    transition: 0.4s;
+}
+
+svg:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+
+
+}
+
+.boton-reserva {
+    padding: 14px 50px;
+    border: none;
+    background: #C5142C;
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.boton-reserva:hover {
+    background: #000;
+    color:#ce3333;
+
+}
+
+main{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+    z-index: 50;
+
+}
+
+.titular {
+    color:white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titular h1 {
+    font-size: 130px;
+    font-weight: 800;
+    font-family: personal;
+    color:#fdd551;
+    /*text-shadow: 2px 0 0 #C5142C, -2px 0 0 #C5142C, 0 2px 0 #C5142C, 0 -2px 0 #C5142C, 1px 1px #C5142C, -1px -1px 0 #C5142C, 1px -1px 0 #C5142C, -1px 1px 0 #C5142C;*/
+    max-width: 90%;
+    margin: auto;
+    text-shadow: 3px 3px 3px #C5142C;
+    min-width: fit-content;
+
+
+}
+
+
+.titular p {
+    color:#fff;
+    font-style: bold;
+    font-size: 24px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+
+#botonInicio {
+    margin-top: 30px;
+    font-size: 24px;
+    padding: 23px 50px;
+
+}
+
+
+section {
+    width: 100%;
+    position:relative;
+    background-color: #000000;
+
+}
+
+.contenido-Seccion {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 40px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: none;
+}
+
+.ladoUno {
+    width: 50%;
+
+
+}
+
+.ladoUno h3 {
+    font-weight: 800;
+    color:#ce3333;
+    max-width: 90%;
+    margin: auto;
+    min-width: fit-content;
+
+}
+
+.ladoUno h1 {
+    font-size:70px;
+    font-weight: 800;
+    color:#fff;
+    max-width: 90%;
+    margin: auto;
+
+}
+
+.ladoDos {
+    height: 500px;
+    width: 50%;
+    background-image: url("../assets/media/sushi.jpg");
+    background-size: cover;
+    background-position: 50% 38%;
+    background-color: #000;
+
+}
+
+.ladoTres {
+    height: 900px;
+    width: 50%;
+    background-image: url("https://thumbs.dreamstime.com/b/pedazos-del-sushi-puestos-entre-los-palillos-en-fondo-negro-100471931.jpg");
+    background-size: cover;
+    background-position: 50% 38%;
+    background-color: #000;
+
+}
+
+
+.menuSeccion {
+    background-color:#DFE0DA;
+    /*
+    background-image: url("../assets/media/background-texture.jpg");
+    background-repeat: repeat;*/
+}
+
+.tituloSeccion {
+    font-size:5vh;
+    font-weight: 800;
+    text-align: center;
+    color:#222;
+
+}
+
+#tituloMenu {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 3em;
+}
+.menuSeccion p {
+       
+    display: inline-block;
+}
+  
+#tituloMenu::before {
+    position: absolute;
+    top: calc(50%-90px);
+    right: 0;
+    left: 0;
+    Content: "";
+    Background-color: #7C796C;
+    height: 2px;
+    width: 20%;
+    margin: auto;
+
+    
+}
+
+.icon1 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    border: 2px solid #7C796C;
+    background: #222;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: auto;
+    color:white;
+}
+
+
+#tiendaProductos {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    padding: 100px;
+    margin: auto;
+    border:1px solid red;
+
+}
+
+.grid-container > div {
+    border-radius: 20px;
+    border:1px solid rgb(0, 255, 42);
+    max-width: auto;
+
+}
+
+.grid-container > div img {
+    border-radius: 50%;
+    height: 80%;
+    margin: 20px;
+    width: 300px;
+
+}
+
+.cuboGrid1 {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.grid-container > div p,h1 {
+    margin: 20px;
+}
+
+#cuadroSeparador {
+    background-image: url("https://www.ppt-backgrounds.net/thumbs/light-japanese-art-templates.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    height: 80vh;
+    box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+    z-index: 20;
+}
+
+#cuadroSeparador h1 {
+    position: relative;
+    float: left;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 130px;
+    font-weight: 800;
+    font-family: personal;
+    color:#000000;
+    /*text-shadow: 2px 0 0 #C5142C, -2px 0 0 #C5142C, 0 2px 0 #C5142C, 0 -2px 0 #C5142C, 1px 1px #C5142C, -1px -1px 0 #C5142C, 1px -1px 0 #C5142C, -1px 1px 0 #C5142C;*/
+    max-width: 90%;
+    margin: auto;
+    text-shadow: 3px 3px 3px #fdd551;
+    min-width: fit-content;
+}
+
+
+
+
+
+@media screen and (max-width:1200px) {
+    .menu {
+        display: none;
+    }
+
+}
+
+
+
